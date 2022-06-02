@@ -1,0 +1,31 @@
+<body>
+
+  <router-outlet
+  (logOn)="logOnFunction()"
+  (logOff)="logOnFunction()"></router-outlet> <!-- routing -->
+
+  <!-- (playerName)="playerNameFunction($event)"
+  (playerMail)="playerMailFunction($event)" -->
+
+  <!-- <app-intro display:none
+    (routingGamePage)="routingGamePageFunction()"
+    (logOn)="logOnFunction()"
+    (playerName)="playerNameFunction($event)"
+    (playerMail)="playerMailFunction($event)"
+    (logOff)="logOnFunction()">
+  </app-intro> -->
+
+  <!-- <ng-container *ngIf="playerLogged === false ">
+    <app-intro
+        (routingGamePage)="routingGamePageFunction()"
+        (logOn)="logOnFunction()"
+        (playerName)="playerNameFunction($event)"
+        (playerMail)="playerMailFunction($event)" >
+    </app-intro>
+  </ng-container>
+
+  <app-game *ngIf="playerLogged === true" [playerName]="playerName" [playerMail]="playerMail"
+    (logOff)="logOnFunction()">
+  </app-game> -->
+
+</body>
