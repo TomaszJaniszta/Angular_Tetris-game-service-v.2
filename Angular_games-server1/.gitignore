@@ -1,6 +1,0 @@
-node_modules
-!public/docs/*.js
-!public/docs/*.map
-!classes/*.js
-!routes/*.js
-!app.js
