@@ -1,0 +1,80 @@
+<router-outlet></router-outlet>
+<div class= "game" >
+    <h1>Hello <span style="color:rgb(46, 122, 2)"> {{ playerName }} </span>! </h1>
+    <h3><span style="color:rgb(88, 194, 255)"><i> {{ playerMail }} </i></span></h3>
+    <button class="game" value=false (click)="backToIntroPage(); game.actionStop(); game.actionReset(); clearList()">Log off</button>
+    <br/>
+    <button class="game" value="go back" (click)="goBack()">Wstecz (location.back)</button>
+    <h2><span style="color:rgb(4, 0, 255)"><b> Let's start the game now! </b></span></h2>
+
+    <button (click)="game.actionStop(); openHighScores()"><b> High scores :) </b></button>
+    <button (click)="changeColor()"><b> Color change </b></button>
+    <p>Game state: <span style="color:rgb(151, 56, 1)"><b> {{gameState}} </b></span> 
+        / Points: <span style="color:rgb(251, 0, 0)"><b> {{points}} </b></span> 
+        / Time played: <span style="color:rgb(221, 169, 0)"><b> {{timeDisplayed}} s</b></span>
+    </p>
+    <!-- <p> {{timePlayed}} </p>	 -->
+    <table align= "center">
+        <td style="vertical-align: top">
+            <br>
+            <br>
+            <br>
+            <tr align= "center"><button class="game" (click)="game.actionRotate()">Rotate</button></tr>
+            <tr align= "center"><button class="game" (click)="game.actionLeft()"> Left </button>
+                                <button class="game" (click)="game.actionRight()"> Right </button>
+            </tr>
+            <tr align= "center"><button class="game" (click)="game.actionDown()"> Down </button></tr>
+        </td>
+        <td style="vertical-align: top">
+            <tr><button *ngIf="gameState === 'Ready' || gameState === 'Paused'" class="game" #buttonStart value='Playing' 
+                    (click)="game.actionStart(); gameStatePlaying(buttonStart.value); timeStart()">
+                    Play
+                </button>
+
+                <button *ngIf="gameState === 'Playing' " class="game" #buttonPause value='Paused'
+                    (click)="game.actionStop(); gameStatePlaying(buttonPause.value)">
+                    Pause
+                </button>
+                    
+                <button class="game" #buttonReset value='Ready' 
+                    (click)= "gameStatePlaying(buttonReset.value); game.actionStop(); game.actionReset(); clearList()">
+                    Reset
+                </button>
+            </tr>
+
+            <tr>
+                <br>
+                <tetris-core 
+                [ngClass]="color"
+                #game 
+                (lineCleared)="onLineCleared()"
+                (gameOver)="onGameOver()"
+                ></tetris-core>
+            </tr>
+        </td>
+        <td style="vertical-align: top">
+            <br>
+            <p class = "game2"><b> Game history: </b></p>
+            <p>
+                Sort by time: <button (click)="sortByTimeAsc()"> Ascending</button>	
+                Sort by time: <button (click)="sortByTimeDsc()"> Descending</button>	
+            </p>
+            <p>
+            Filter by action type:
+                <select (change)="categoryEventChange($event)">
+                      <option *ngFor="let opt of actionCategories" [value]="opt"
+                        [attr.selected]="opt === selectedOption ? true : null">
+                        {{ opt }}
+                      </option>
+                </select>
+            </p>
+            <br>
+            <br>
+            <div *ngFor="let event of historyList
+                          | filterEvents: selectedOption
+                          | sort: sortByTime">
+                <div align = "Left"> Time: {{event.timeStamp | date: "dd.M.YYYYr H:mm:ss"}}, event: {{event.gameEvent}} </div>
+            </div>
+        </td>
+    </table>
+</div>
