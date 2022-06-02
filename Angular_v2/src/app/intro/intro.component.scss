@@ -1,0 +1,30 @@
+.normal {
+	text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+
+	& .form {
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-image: linear-gradient(rgb(255, 208, 0), yellow, rgb(255, 208, 0));
+        & .ng-touched.ng-invalid {
+            border: 1px solid red
+        }
+    }
+}
+.contrast {
+	text-align: center;
+    font-family: "Lucida Console", "Courier New", monospace;
+    // color: rgb(255, 255, 255); 
+	& .form {
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-image: linear-gradient(rgb(0, 0, 0), rgb(255, 255, 255), rgb(0, 0, 0));
+        & .ng-touched.ng-invalid {
+            border: 1px solid red
+        }
+    }
+}
+
+    
