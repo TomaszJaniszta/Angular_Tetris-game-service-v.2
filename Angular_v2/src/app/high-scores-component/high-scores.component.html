@@ -1,0 +1,46 @@
+<div class= "game" >
+    <h1><b> High-scores! </b></h1>
+    You: {{playerName}}
+    <br>
+    <br>
+        <!-- <button
+            type="button"
+            value="Return to game page"
+            [routerLink]="['/game']"
+            >Return to game page
+        </button> -->
+        <button class="game" value="go back" (click)="goBack()">Wstecz (location.back)</button>
+    <br>
+    <br>
+        Sort: <button
+            type="button"
+            (click)="sortAscending()"
+        >Ascending
+        </button>
+
+        Sort: <button
+            type="button"
+            (click)="sortDescending()"
+        >Descending
+        </button>
+    <br>
+    <br>
+    <button *ngIf="onlyMyScoresDisplay === false"
+        type="button"
+        (click)="onlyMyScoresButton()"
+        ><u> Check yours scores </u>
+    </button>
+    <button *ngIf="onlyMyScoresDisplay === true"
+        type="button"
+        (click)="onlyMyScoresButton()"
+        ><u> Check top 10 players scores </u>
+    </button>
+    <br>
+    <br>
+    <div *ngFor="let item of data10displayed | slice: 0:10 ">
+        <div>
+        <span> {{ item.name }}: </span>
+        <span> {{ item.score }} </span>
+        </div>
+    </div>
+</div>
