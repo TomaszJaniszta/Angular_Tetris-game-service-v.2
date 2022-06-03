@@ -6,4 +6,4 @@
 - lists of results and events with filters,
 - active forms,
 - active effects 
-- and other elements created during educational activities.
+- and other elements created during educational activities
