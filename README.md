@@ -6,4 +6,8 @@
 - lists of results and events with filters,
 - active forms,
 - active effects 
+- routing
+- rxjs
+- guard
+- services
 - and other elements created during educational activities
