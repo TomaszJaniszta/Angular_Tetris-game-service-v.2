@@ -3,9 +3,7 @@
 Aplication is simulation of service with tetris game with different functionalities.
 # Version 1. 
 	I. Intro page with intro text and player form
-		* Form with two inputs
-			- player name
-     			- player email (validation)
+		* Form with two inputs: player name, player email (validation)
   		* Start game button - upon clicking 'start' checking name and email, and notify player, if name and email are fine then store this data and moving to the game page
 	II. Game page
 		* personalized welcome message (with player name)
