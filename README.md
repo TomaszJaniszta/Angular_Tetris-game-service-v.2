@@ -19,7 +19,15 @@ Aplication is simulation of service with tetris game with different functionalit
 			- filterable by event type (ie. show only 'line cleared' events)
 			- sortable by timestamp (latest first or oldest first)
 
-Clon / copy project. Initialize a project npm init -y. Install dependencies npm install. Run ng serve -o. Navigate to http://localhost:4200/
+Clon / copy project
+
+Initialize a project npm init -y
+
+Install dependencies npm install 
+
+Run ng serve -o
+
+http://localhost:4200/
 
 # Version 2. Connected with simulated game server to work with methods: GET, POST
 	I. Routing between two pages (intro, game page)
@@ -65,6 +73,22 @@ Clon / copy project. Initialize a project npm init -y. Install dependencies npm 
 			- Color selection with initial value, upon change some element either changes
 			- Store user input in local storage and fill the form for returning users
 
-Clon / copy project. Initialize a project npm init -y. Install dependencies npm install. Run ng serve -o. Navigate to http://localhost:4200/
+Clon / copy project
 
-Clon / copy server. Initialize a project npm init -y. Install dependencies npm install. Run npm run start port:8080. 
+Initialize a project npm init -y
+
+Install dependencies npm install
+
+Run ng serve -o
+
+http://localhost:4200/
+
+
+
+Clon / copy server
+
+Initialize a project npm init -y
+
+Install dependencies npm install
+
+Run npm run start port:8080
